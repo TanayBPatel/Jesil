@@ -1,0 +1,27 @@
+  
+ ,
+  ,
+  {
+    "title": "HTML & CSS for Beginners",
+    "category": "Web Development",
+    "url": "https://example.com/html-css",
+    "duration": "25 min",
+    "difficulty": "Beginner",
+    "views": "35K",
+    "reviews": [
+      { "user": "Oscar", "rating": 5, "comment": "Great for absolute beginners!" },
+      { "user": "Paul", "rating": 3, "comment": "Could have covered more styling tips." }
+    ]
+  },
+  {
+    "title": "Git & GitHub Essentials",
+    "category": "Version Control",
+    "url": "https://example.com/git-github",
+    "duration": "30 min",
+    "difficulty": "Beginner",
+    "views": "15K",
+    "reviews": [
+      { "user": "Quincy", "rating": 5, "comment": "Very easy to follow." },
+      { "user": "Rachel", "rating": 4, "comment": "Good but needed more examples." }
+    ]
+  }
