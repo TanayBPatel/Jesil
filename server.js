@@ -208,6 +208,8 @@ const auth = (req, res, next) => {
   const token = req.header("Authorization");
   if (!token) return res.status(401).json({ message: "Access denied" });
   try {
+    console.log(token)
+    
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     next();
@@ -238,17 +240,17 @@ app.post("/videos/:id/review", auth, async (req, res) => {
   res.json({ message: "Review added" });
 });
 
-// Add a New Video (Protected)
-app.post("/videos", auth, async (req, res) => {
-  const { title, category, url, duration, difficulty, views } = req.body;
-  try {
-    const video = new Video({ title, category, url, duration, difficulty, views, reviews: [] });
-    await video.save();
-    res.json({ message: "Video added successfully", video });
-  } catch (error) {
-    res.status(500).json({ message: "Error adding video", error });
-  }
-});
+// // Add a New Video (Protected)
+// app.post("/videos", auth, async (req, res) => {
+//   const { title, category, url, duration, difficulty, views } = req.body;
+//   try {
+//     const video = new Video({ title, category, url, duration, difficulty, views, reviews: [] });
+//     await video.save();
+//     res.json({ message: "Video added successfully", video });
+//   } catch (error) {
+//     res.status(500).json({ message: "Error adding video", error });
+//   }
+// });
 
 // Bookmark a Video (Protected)
 app.post("/bookmark/:videoId", auth, async (req, res) => {
